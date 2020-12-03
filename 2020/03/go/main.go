@@ -11,9 +11,12 @@ func main() {
 	offsetX := 0
 	scanner.Scan()
 
+	incX := 1
+
 	for scanner.Scan() {
+		// scanner.Scan() // incY will be scaning n-1 extra times before reading line
 		line := scanner.Text()
-		offsetX += 3
+		offsetX += incX
 		if line[offsetX%len(line)] == byte('#') {
 			count++
 		}
